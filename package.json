@@ -2,7 +2,7 @@
   "name": "@newlogic-digital/utils-js",
   "version": "0.0.1",
   "type": "module",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "New Logic Studio s.r.o.",
   "license": "MIT",
   "scripts": {
@@ -13,8 +13,12 @@
     "eslint-config-standard": "^17.1.0"
   },
   "files": [
+    "src",
     "index.js"
   ],
+  "exports": {
+    "./src/*": "./src/*"
+  },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"
   },
