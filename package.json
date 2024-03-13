@@ -1,6 +1,6 @@
 {
-  "name": "@newlogic-digital/utils",
-  "version": "1.0.0-next.1",
+  "name": "@newlogic-digital/utils-js",
+  "version": "0.0.1",
   "type": "module",
   "main": "index.js",
   "author": "New Logic Studio s.r.o.",
