@@ -4,7 +4,7 @@ export const makeRequest = async (...arg) => {
     return naja.makeRequest(...arg)
 }
 
-export const loadNaja = async (element, bindUI = false) => {
+export const initNaja = async (element, bindUI = false) => {
     const naja = (await import('naja')).default
 
     bindUI && naja.uiHandler.bindUI(element)

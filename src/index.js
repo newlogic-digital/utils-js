@@ -1,19 +1,22 @@
 import addToDataset from "./addToDataset.js"
 import importScript from "./importScript.js"
 import importStyle from "./importStyle.js"
-import loadActions from "./loadActions.js"
-import loadControllers from "./loadControllers.js"
-import { NajaRecaptchaExtension, NajaFormValidityExtension, NajaStimulusExtension, loadNaja, makeRequest } from "./naja.js"
+import replaceScript from "./replaceScript.js"
+import replaceScripts from "./replaceScripts.js"
+import { initActions, initControllers } from "./stimulus.js"
+import { NajaRecaptchaExtension, NajaFormValidityExtension, NajaStimulusExtension, initNaja, makeRequest } from "./naja.js"
 
 export {
     addToDataset,
     importScript,
     importStyle,
-    loadActions,
-    loadControllers,
+    initActions,
+    initControllers,
     NajaRecaptchaExtension,
     NajaFormValidityExtension,
     NajaStimulusExtension,
-    loadNaja,
-    makeRequest
+    initNaja,
+    makeRequest,
+    replaceScript,
+    replaceScripts
 }

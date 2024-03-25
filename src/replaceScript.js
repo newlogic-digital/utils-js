@@ -1,6 +1,12 @@
-import addToDataset from "./addToDataset.js";
+export default function replaceScript(element, ignoreAttributeName = null) {
+    const script = document.createElement('script')
 
-export default function replaceScript (element, selector = 'script', controller = 'use-script') {
-    element.querySelectorAll(selector).forEach(script =>
-        addToDataset(script.dataset, 'controller', controller))
+    ;[...element.attributes].forEach(({ specified, name, value }) => {
+        if (specified && !name.match(ignoreAttributeName)) {
+            script.setAttribute(name, value)
+        }
+    })
+
+    script.innerHTML = element.innerHTML
+    element.replaceWith(script)
 }
