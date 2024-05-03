@@ -1,17 +1,11 @@
-import addToDataset from "./addToDataset.js";
+import dataset from './dataset.js'
 
 export function initActions (parent, selectors) {
     if (!parent) return
 
-    selectors.forEach(selector => {
-        parent.querySelectorAll(selector[0]).forEach(element => {
-            const attribute = element.dataset.action
-
-            if (!attribute) {
-                element.dataset.action = selector[1]
-            } else if (!attribute.includes(selector[1])) {
-                element.dataset.action = `${attribute} ${selector[1]}`
-            }
+    selectors.forEach(([selector, action]) => {
+        parent.querySelectorAll(selector).forEach(element => {
+            dataset(element, 'action').add(action)
         })
     })
 }
@@ -21,7 +15,7 @@ export function initControllers (parent, selectors) {
 
     selectors.forEach(selector => {
         [...parent.getElementsByClassName(selector)].forEach(element => {
-            addToDataset(element.dataset, 'controller', selector)
+            dataset(element, 'controller').add(selector)
         })
     })
 }

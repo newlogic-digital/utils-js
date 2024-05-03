@@ -1,4 +1,4 @@
-export default function replaceScript(element, ignoreAttributeName = null) {
+export default function replaceScript (element, ignoreAttributeName = null) {
     const script = document.createElement('script')
 
     ;[...element.attributes].forEach(({ specified, name, value }) => {

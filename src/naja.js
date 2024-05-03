@@ -12,12 +12,8 @@ export const initNaja = async (element, bindUI = false) => {
     element.querySelectorAll(`button${naja.uiHandler.selector}`).forEach(element => {
         if (element.form) return
 
-        element.addEventListener('click', async event => {
-            const options = naja.prepareOptions()
-
-            naja.uiHandler.dispatchEvent(new CustomEvent('interaction', { cancelable: true, detail: { element, originalEvent: event, options } }))
-
-            await naja.makeRequest(element.dataset.najaMethod ?? 'GET', element.dataset.najaUrl, element.dataset.najaData, options)
+        element.addEventListener('click', event => {
+            naja.uiHandler.processInteraction(element, element.dataset.najaMethod ?? 'GET', element.dataset.najaUrl, element.dataset.najaData, {}, event)
         })
     })
 }
