@@ -5,6 +5,8 @@ import replaceScript from './replaceScript.js'
 import replaceScripts from './replaceScripts.js'
 import fetchJson from './fetchJson.js'
 import getUrl from './getUrl.js'
+import getId from './getId.js'
+import replaceVars from './replaceVars.js'
 import { initActions, initControllers } from './stimulus.js'
 import { NajaRecaptchaExtension, NajaFormValidityExtension, NajaStimulusExtension, initNaja, makeRequest } from './naja.js'
 
@@ -21,6 +23,8 @@ export {
     makeRequest,
     replaceScript,
     replaceScripts,
+    replaceVars,
     fetchJson,
-    getUrl
+    getUrl,
+    getId
 }
