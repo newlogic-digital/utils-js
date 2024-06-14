@@ -9,7 +9,7 @@ export const initNaja = async (element, bindUI = true) => {
 
     bindUI && naja.uiHandler.bindUI(element)
 
-    element.querySelectorAll(`button${naja.uiHandler.selector}`).forEach(element => {
+    element.querySelectorAll(`:where(button, [role="button"])${naja.uiHandler.selector}`).forEach(element => {
         if (element.form && element.type === 'submit') return
 
         element.addEventListener('click', event => {
