@@ -1,4 +1,4 @@
-export default function getUrl (path, params, origin) {
+export default function getUrl(path, params, origin) {
     const url = new URL(path, origin ?? window.location.origin)
     url.search = new URLSearchParams({
         ...params,

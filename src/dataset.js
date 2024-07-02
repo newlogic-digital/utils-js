@@ -1,4 +1,4 @@
-export default function dataset (element, name) {
+export default function dataset(element, name) {
     return {
         add: (...values) => {
             element.dataset[name] = [...new Set([...element.dataset[name]?.split(' ') ?? [], ...values])].join(' ')
