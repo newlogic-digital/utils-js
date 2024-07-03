@@ -1,5 +1,4 @@
 import neostandard, { plugins } from 'neostandard'
-import globals from 'globals'
 
 export default [
     ...neostandard({
