@@ -1,6 +1,6 @@
 import Plugin from '@swup/plugin'
 
-export default class SwupNewlogicDigitalPlugin extends Plugin {
+export class SwupNewlogicDigitalPlugin extends Plugin {
     name = 'SwupNewlogicDigitalPlugin'
 
     requires = { swup: '>=4' }

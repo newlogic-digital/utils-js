@@ -3,9 +3,7 @@ import globals from 'globals'
 
 export default [
     ...neostandard({
-        globals: {
-            ...globals.browser
-        },
+        env: ['browser'],
         ignores: ['**/+.js']
     }),
     plugins['@stylistic'].configs.customize({

@@ -7,8 +7,11 @@ import fetchJson from './fetchJson.js'
 import getUrl from './getUrl.js'
 import getId from './getId.js'
 import replaceVars from './replaceVars.js'
+import dispatchEvent from './dispatchEvent.js'
+import toggleDarkMode from './toggleDarkMode.js'
 import { initActions, initControllers } from './stimulus.js'
 import { NajaRecaptchaExtension, NajaFormValidityExtension, NajaStimulusExtension, initNaja, makeRequest } from './naja.js'
+import { SwupNewlogicDigitalPlugin } from './swup.js'
 
 export {
     dataset,
@@ -26,5 +29,8 @@ export {
     replaceVars,
     fetchJson,
     getUrl,
-    getId
+    getId,
+    dispatchEvent,
+    toggleDarkMode,
+    SwupNewlogicDigitalPlugin
 }
