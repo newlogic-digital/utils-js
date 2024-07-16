@@ -20,7 +20,7 @@ export class SwupNewlogicDigitalPlugin extends Plugin {
     mount() {
         document.addEventListener('click', this.handleNoSwupClick)
 
-        this.swup.hooks.before('scroll:top',  this.handleScrollTop)
+        this.swup.hooks.before('scroll:top', this.handleScrollTop)
         this.swup.hooks.on('content:replace', this.handleContentReplace)
         this.swup.hooks.on('cache:set', this.handleCacheSet)
         this.swup.hooks.before('page:load', this.handlePageLoad)
@@ -45,7 +45,7 @@ export class SwupNewlogicDigitalPlugin extends Plugin {
         const content = new DOMParser().parseFromString(page.html, 'text/html')
 
         content.querySelectorAll('[data-swup-replace]').forEach((element) => {
-            const replaceElement = document.querySelector(`[data-swup-replace=${element.dataset.libReplaceTag}]`)
+            const replaceElement = document.querySelector(`[data-swup-replace="${element.dataset.libReplaceTag}"]`)
             const placement = element.closest('head') ? document.head : replaceElement.parentElement
 
             replaceElement ? (replaceElement.outerHTML = element.outerHTML) : placement.insertAdjacentHTML('beforeend', element.outerHTML)
