@@ -4,12 +4,12 @@ export const makeRequest = async (...arg) => {
     return naja.makeRequest(...arg)
 }
 
-export const initNaja = async (element, bindUI = true) => {
+export const initNaja = async (element, bindUI = true, selectors = 'button, [role="button"]') => {
     const naja = (await import('naja')).default
 
     bindUI && naja.uiHandler.bindUI(element)
 
-    element.querySelectorAll(`:where(button, [role="button"])${naja.uiHandler.selector}`).forEach((element) => {
+    element.querySelectorAll(`:where(${selectors})${naja.uiHandler.selector}`).forEach((element) => {
         if (element.form && element.type === 'submit') return
 
         element.addEventListener('click', (event) => {
@@ -21,25 +21,9 @@ export const initNaja = async (element, bindUI = true) => {
 export const NajaRecaptchaExtension = {
     initialize(naja) {
         naja.uiHandler.addEventListener('interaction', (event) => {
-            const { element } = event.detail
-
-            if (
-                element?.form?.dataset?.controller?.includes('x-recaptcha')
-                && !event.detail?.originalEvent?.detail?.recaptchaExecuted
-            ) {
+            if (event.detail?.form?.gtoken && !event.detail?.originalEvent?.detail?.recaptchaExecuted) {
                 event.preventDefault()
-                return false
             }
         })
-    }
-}
-
-export const NajaStimulusExtension = (loadStimulus) => {
-    return {
-        initialize(naja) {
-            naja.snippetHandler.addEventListener('afterUpdate', () => {
-                loadStimulus(document.body)
-            })
-        }
     }
 }
