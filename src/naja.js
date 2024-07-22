@@ -36,7 +36,7 @@ export const NajaRecaptchaExtension = {
             const { element } = event.detail
 
             if (
-                element?.dataset?.controller?.includes('lib-recaptcha') &&
+                (element.form ?? element)?.dataset?.controller?.includes('lib-recaptcha') &&
                 !event.detail?.originalEvent?.detail?.recaptchaExecuted
             ) {
                 event.preventDefault()
