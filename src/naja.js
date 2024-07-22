@@ -18,25 +18,13 @@ export const initNaja = async (element, bindUI = true) => {
     })
 }
 
-export const NajaFormValidityExtension = {
-    initialize(naja) {
-        naja.uiHandler.addEventListener('interaction', (event) => {
-            const { element } = event.detail
-
-            if (element?.form && !element.form.reportValidity()) {
-                event.preventDefault()
-            }
-        })
-    }
-}
-
 export const NajaRecaptchaExtension = {
     initialize(naja) {
         naja.uiHandler.addEventListener('interaction', (event) => {
             const { element } = event.detail
 
             if (
-                element?.dataset?.controller?.includes('lib-recaptcha')
+                element?.form?.dataset?.controller?.includes('x-recaptcha')
                 && !event.detail?.originalEvent?.detail?.recaptchaExecuted
             ) {
                 event.preventDefault()
