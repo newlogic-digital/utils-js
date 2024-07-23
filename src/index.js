@@ -10,7 +10,7 @@ import replaceVars from './replaceVars.js'
 import dispatchEvent from './dispatchEvent.js'
 import toggleDarkMode from './toggleDarkMode.js'
 import { initActions, initControllers } from './stimulus.js'
-import { NajaRecaptchaExtension, NajaFormValidityExtension, NajaStimulusExtension, initNaja, makeRequest } from './naja.js'
+import { NajaNewlogicDigitalExtension, initNaja } from './naja.js'
 import { SwupNewlogicDigitalPlugin } from './swup.js'
 
 export {
@@ -19,11 +19,8 @@ export {
     importStyle,
     initActions,
     initControllers,
-    NajaRecaptchaExtension,
-    NajaFormValidityExtension,
-    NajaStimulusExtension,
+    NajaNewlogicDigitalExtension,
     initNaja,
-    makeRequest,
     replaceScript,
     replaceScripts,
     replaceVars,

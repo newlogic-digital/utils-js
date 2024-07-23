@@ -1,12 +1,7 @@
-export const makeRequest = async (...arg) => {
-    const naja = (await import('naja')).default
+import naja from 'naja'
+import dispatchEvent from './dispatchEvent'
 
-    return naja.makeRequest(...arg)
-}
-
-export const initNaja = async (element, bindUI = true, selectors = 'button, [role="button"]') => {
-    const naja = (await import('naja')).default
-
+export const initNaja = (element, bindUI = true, selectors = 'button, [role="button"]') => {
     bindUI && naja.uiHandler.bindUI(element)
 
     element.querySelectorAll(`:where(${selectors})${naja.uiHandler.selector}`).forEach((element) => {
@@ -18,12 +13,26 @@ export const initNaja = async (element, bindUI = true, selectors = 'button, [rol
     })
 }
 
-export const NajaRecaptchaExtension = {
-    initialize(naja) {
-        naja.uiHandler.addEventListener('interaction', (event) => {
-            if (event.detail?.form?.gtoken && !event.detail?.originalEvent?.detail?.recaptchaExecuted) {
-                event.preventDefault()
-            }
-        })
+export const NajaNewlogicDigitalExtension = (options) => {
+    return {
+        initialize(naja) {
+            naja.uiHandler.selector = '[data-naja]'
+
+            initNaja(document.body, false)
+
+            naja.uiHandler.addEventListener('interaction', (event) => {
+                dispatchEvent(event.detail.element, 'naja:interaction')
+
+                if (event.detail?.element?.form?.gtoken && !event.detail?.originalEvent?.detail?.recaptchaExecuted) {
+                    event.preventDefault()
+                }
+            })
+
+            naja.snippetHandler.addEventListener('afterUpdate', (event) => {
+                dispatchEvent(event.detail.snippet, 'naja:afterUpdate')
+
+                if (options.afterUpdate) options.afterUpdate(event)
+            })
+        }
     }
 }
