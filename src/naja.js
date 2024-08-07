@@ -36,9 +36,9 @@ export const NajaNewlogicDigitalExtension = (options) => {
                 if (options.onAfterUpdate) options.onAfterUpdate(event)
             })
 
-            naja.snippetHandler.addEventListener('success', (event) => {
-                if (event.payload.formStatus) {
-                    dispatchEvent(document.getElementById(event.payload.formId), `naja:form-${event.payload.formStatus}`)
+            naja.addEventListener('success', (event) => {
+                if (event.detail?.payload?.formId && event?.detail?.payload?.formStatus) {
+                    dispatchEvent(document.getElementById(event.detail.payload.formId), `naja:form-${event.detail.payload.formStatus}`)
                 }
 
                 if (options.onSuccess) options.onSuccess(event)
