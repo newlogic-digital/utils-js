@@ -18,12 +18,12 @@ export class SwupNewlogicDigitalPlugin extends Plugin {
     }
 
     mount() {
-        document.addEventListener('click', this.handleNoSwupClick)
+        document.addEventListener('click', this.handleNoSwupClick.bind(this))
 
-        this.swup.hooks.before('scroll:top', this.handleScrollTop)
-        this.swup.hooks.on('content:replace', this.handleContentReplace)
-        this.swup.hooks.on('cache:set', this.handleCacheSet)
-        this.swup.hooks.before('page:load', this.handlePageLoad)
+        this.swup.hooks.before('scroll:top', this.handleScrollTop.bind(this))
+        this.swup.hooks.on('content:replace', this.handleContentReplace.bind(this))
+        this.swup.hooks.on('cache:set', this.handleCacheSet.bind(this))
+        this.swup.hooks.before('page:load', this.handlePageLoad.bind(this))
     }
 
     unmount() {

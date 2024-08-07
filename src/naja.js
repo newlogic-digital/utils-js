@@ -26,12 +26,22 @@ export const NajaNewlogicDigitalExtension = (options) => {
                 if (event.detail?.element?.form?.gtoken && !event.detail?.originalEvent?.detail?.recaptchaExecuted) {
                     event.preventDefault()
                 }
+
+                if (options.onInteraction) options.onInteraction(event)
             })
 
             naja.snippetHandler.addEventListener('afterUpdate', (event) => {
                 dispatchEvent(event.detail.snippet, 'naja:afterUpdate')
 
-                if (options.afterUpdate) options.afterUpdate(event)
+                if (options.onAfterUpdate) options.onAfterUpdate(event)
+            })
+
+            naja.snippetHandler.addEventListener('success', (event) => {
+                if (event.payload.formStatus) {
+                    dispatchEvent(document.getElementById(event.payload.formId), `naja:form-${event.payload.formStatus}`)
+                }
+
+                if (options.onSuccess) options.onSuccess(event)
             })
         }
     }
