@@ -46,3 +46,31 @@ export const NajaNewlogicDigitalExtension = (options) => {
         }
     }
 }
+
+export const NajaFormValidityExtension = {
+    initialize(naja) {
+        naja.uiHandler.addEventListener('interaction', (event) => {
+            const { element } = event.detail
+
+            if (element?.form && !element.form.reportValidity()) {
+                event.preventDefault()
+            }
+        })
+    }
+}
+
+export const NajaRecaptchaExtension = {
+    initialize(naja) {
+        naja.uiHandler.addEventListener('interaction', (event) => {
+            const { element } = event.detail
+
+            if (
+                (element.form ?? element)?.dataset?.controller?.includes('lib-recaptcha')
+                && !event.detail?.originalEvent?.detail?.recaptchaExecuted
+            ) {
+                event.preventDefault()
+                return false
+            }
+        })
+    }
+}
