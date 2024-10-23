@@ -1,5 +1,5 @@
 import dataset from './src/dataset.js'
-import dispatchEvent from './src/dispatchEvent.js'
+import dispatchCustomEvent from './src/dispatchCustomEvent.js'
 import fetchJson from './src/fetchJson.js'
 import getId from './src/getId.js'
 import getUrl from './src/getUrl.js'
@@ -20,6 +20,6 @@ export {
     fetchJson,
     getUrl,
     getId,
-    dispatchEvent,
+    dispatchCustomEvent,
     toggleDarkMode
 }

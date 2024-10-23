@@ -1,3 +1,3 @@
-export default function dispatchEvent(element, event = 'change', options = {}) {
+export default function dispatchCustomEvent(element, event = 'change', options = {}) {
     element.dispatchEvent(new CustomEvent(event, { bubbles: true, cancelable: true, ...options }))
 }
