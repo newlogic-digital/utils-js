@@ -1,5 +1,6 @@
 import dataset from './src/dataset.js'
 import dispatchCustomEvent from './src/dispatchCustomEvent.js'
+import fetchElement from './src/fetchElement.js'
 import fetchJson from './src/fetchJson.js'
 import getId from './src/getId.js'
 import getUrl from './src/getUrl.js'
@@ -18,6 +19,7 @@ export {
     replaceScripts,
     replaceVars,
     fetchJson,
+    fetchElement,
     getUrl,
     getId,
     dispatchCustomEvent,
