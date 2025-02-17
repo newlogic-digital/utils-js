@@ -1,4 +1,4 @@
-export default function isAttrSupport() {
+export default function supportsIsAttribute() {
     class Element extends HTMLBRElement {}
     customElements.define(name, Element, { extends: 'br' })
 
