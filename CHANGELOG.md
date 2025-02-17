@@ -1,4 +1,4 @@
-# 1.1.2, 1.1.3
+# 1.1.2 - 1.1.4
 * feat: added supportsIsAttribute function
 
 # 1.1.1
