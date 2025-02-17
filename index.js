@@ -6,6 +6,7 @@ import getId from './src/getId.js'
 import getUrl from './src/getUrl.js'
 import importScript from './src/importScript.js'
 import importStyle from './src/importStyle.js'
+import isAttrSupport from './src/isAttrSupport.js'
 import replaceScript from './src/replaceScript.js'
 import replaceScripts from './src/replaceScripts.js'
 import replaceVars from './src/replaceVars.js'
@@ -15,6 +16,7 @@ export {
     dataset,
     importScript,
     importStyle,
+    isAttrSupport,
     replaceScript,
     replaceScripts,
     replaceVars,
