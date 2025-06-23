@@ -1,6 +1,12 @@
-export default function fetchJson(url, options = {}) {
-    return fetch(url, {
+/**
+ * @param {string} url
+ * @param {object} [options={}]
+ * @returns {Promise<any>}
+ */
+export default async function fetchJson(url, options = {}) {
+    const response = await fetch(url, {
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         ...options
-    }).then(response => response.json())
+    })
+    return await response.json()
 }

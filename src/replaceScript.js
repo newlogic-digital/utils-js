@@ -1,3 +1,8 @@
+/**
+ * @param {HTMLElement} element
+ * @param {string|null} [ignoreAttributeName=null]
+ * @returns {void}
+ */
 export default function replaceScript(element, ignoreAttributeName = null) {
     const script = document.createElement('script')
 

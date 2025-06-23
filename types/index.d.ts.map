@@ -1,0 +1,51 @@
+{
+	"version": 3,
+	"file": "index.d.ts",
+	"names": [
+		"dataset",
+		"importScript",
+		"importStyle",
+		"supportsIsAttribute",
+		"replaceScript",
+		"replaceScripts",
+		"replaceVars",
+		"fetchJson",
+		"fetchElement",
+		"getUrl",
+		"getId",
+		"dispatchCustomEvent",
+		"toggleDarkMode"
+	],
+	"sources": [
+		"../src/dataset.js",
+		"../src/importScript.js",
+		"../src/importStyle.js",
+		"../src/supportsIsAttribute.js",
+		"../src/replaceScript.js",
+		"../src/replaceScripts.js",
+		"../src/replaceVars.js",
+		"../src/fetchJson.js",
+		"../src/fetchElement.js",
+		"../src/getUrl.js",
+		"../src/getId.js",
+		"../src/dispatchCustomEvent.js",
+		"../src/toggleDarkMode.js"
+	],
+	"sourcesContent": [
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null
+	],
+	"mappings": ";iBAKwBA,OAAOA;;;;iBCDPC,YAAYA;iBCAZC,WAAWA;iBCAXC,mBAAmBA;iBCCnBC,aAAaA;iBCCbC,cAAcA;iBCDdC,WAAWA;iBCALC,SAASA;iBCITC,YAAYA;iBCHlBC,MAAMA;iBCHNC,KAAKA;iBCELC,mBAAmBA;iBCLnBC,cAAcA",
+	"ignoreList": []
+}

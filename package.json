@@ -1,25 +1,33 @@
 {
   "name": "@newlogic-digital/utils-js",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "type": "module",
-  "main": "src/index.js",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "types/index.d.ts",
   "author": "New Logic Studio s.r.o.",
   "license": "MIT",
   "scripts": {
     "eslint": "eslint '**/*.js'",
     "eslint-fix": "eslint '**/*.js' --fix",
+    "dts": "node dts.js",
     "publish-next": "npm publish --tag next"
   },
   "devDependencies": {
+    "dts-buddy": "^0.6.2",
     "eslint": "^9.13.0",
     "neostandard": "^0.11.6"
   },
   "files": [
     "src",
+    "types",
     "index.js"
   ],
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
     "./src/*": "./src/*"
   },
   "engines": {

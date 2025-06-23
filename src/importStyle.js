@@ -1,3 +1,7 @@
+/**
+ * @param {string} url
+ * @returns {Promise<void>}
+ */
 export default function importStyle(url) {
     return new Promise((resolve, reject) => {
         if (document.querySelector(`link[href="${url}"]`) === null) {

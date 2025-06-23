@@ -1,3 +1,8 @@
+/**
+ * @param {HTMLElement} element
+ * @param {string} name
+ * @returns {{add: function(...string): void, remove: function(...string): void}}
+ */
 export default function dataset(element, name) {
     return {
         add: (...values) => {

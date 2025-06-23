@@ -1,3 +1,7 @@
+/**
+ * @param {string} [name='is-supports']
+ * @returns {boolean}
+ */
 export default function supportsIsAttribute(name = 'is-supports') {
     class Element extends HTMLBRElement {}
     customElements.define(name, Element, { extends: 'br' })

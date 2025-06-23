@@ -1,6 +1,12 @@
 import getId from './getId.js'
 import fetchJson from './fetchJson.js'
 
+/**
+ * @param {HTMLElement} element
+ * @param {string} url
+ * @param {string} [appendTo]
+ * @returns {Promise<ChildNode>}
+ */
 export default async function fetchElement(element, url, appendTo) {
     element.toggleAttribute('data-loading')
 

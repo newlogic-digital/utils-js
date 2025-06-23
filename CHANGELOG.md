@@ -1,3 +1,6 @@
+# 1.2.0
+* feat: added types
+
 # 1.1.2 - 1.1.4
 * feat: added supportsIsAttribute function
 

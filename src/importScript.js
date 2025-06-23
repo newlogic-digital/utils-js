@@ -1,3 +1,7 @@
+/**
+ * @param {string} url
+ * @returns {Promise<void>}
+ */
 export default function importScript(url) {
     return new Promise((resolve, reject) => {
         if (document.querySelector(`script[src="${url}"]`) === null) {
