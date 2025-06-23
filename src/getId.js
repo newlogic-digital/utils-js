@@ -1,4 +1,5 @@
 /**
+ * @param {string} [delimiter='_']
  * @returns {string}
  */
 export default function getId(delimiter = '_') {
